@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+
+  pre_build:
+    commands:
+      - echo "Installing dependencies and compiling code"
+      - sh install_maven.sh
+      - sudo mvn -version
+
+  build:
+    commands:
+      - echo "Building the project with Maven"
+      - sudo mvn clean
+      - sudo mvn package
+
+artifacts:
+  files:
+    - target/carpage.war
+
+cache:
+  paths:
+    - $HOME/.m2/repository
