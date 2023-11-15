@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: target/carpage.war
-    destination: /opt/tomcat/webapps/carpage.war 
+    destination: /opt/tomcat/webapps/carpage.war
 
 permissions:
   - object: /opt/tomcat/webapps/carpage.war
